@@ -1,0 +1,17 @@
+from behave import given, when, then
+from nose.tools import assert_equal
+
+
+@given(u'que acesso a calculado')
+def step_impl(context):
+    pass
+
+
+@when(u'insiro os valores {num1} e {num2}')
+def step_impl(context, num1, num2):
+    context.res = int(num1) + int(num2)
+
+
+@then(u'o resultado é {res}')
+def step_impl(context, res):
+    assert_equal(context.res, int(res))
